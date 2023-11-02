@@ -7,6 +7,12 @@ export default function App() {
 
   const [step,setStep] = useState(0); 
   
+  function nextStep(){
+    if (step < tutorialData.length - 1){
+      setStep(step => step + 1);
+    }
+  }
+  
   const tutorialData = [
     {
       title: "Dedica moltes hores",
@@ -30,7 +36,12 @@ export default function App() {
 
   return (
     <>
-      <Card {...tutorialData[step]}/>
+      <Card 
+        title= {tutorialData[step].title} 
+        description={tutorialData[step].description}
+        clickNext={nextStep}
+        />
+      
     </>
   )
 }
