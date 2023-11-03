@@ -12,6 +12,12 @@ export default function App() {
       setStep(step => step + 1);
     }
   }
+
+  function prevStep(){
+    if (step > 0){
+      setStep(step => step - 1);
+    }
+  }
   
   const tutorialData = [
     {
@@ -41,9 +47,12 @@ export default function App() {
         image = {tutorialData[step].image}
         title = {tutorialData[step].title} 
         description={tutorialData[step].description}
+        clickPrev={prevStep}
         clickNext={nextStep}
+        step={step}
+        tutorialData={tutorialData.length} 
         />
-      
+  
     </>
   )
 }
