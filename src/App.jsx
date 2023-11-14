@@ -18,6 +18,10 @@ export default function App() {
       setStep(step => step - 1);
     }
   }
+
+  function clickDot(index){
+    setStep(index);
+  }
   
   const tutorialData = [
     {
@@ -51,6 +55,7 @@ export default function App() {
         clickNext={nextStep}
         step={step}
         tutorialData={tutorialData.length} 
+        clickDots = {clickDot}
         />
   
     </>
